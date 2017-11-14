@@ -1,38 +1,57 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/04/11 19:48:57 by tiskow            #+#    #+#              #
+#    Updated: 2017/11/14 10:27:33 by tiskow           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = fillit
-CC = gcc
-INC = includes/
-FLAGS = -Wall -Wextra -Werror
-SRC_NAME =	convert_tetro.c					\
-			check_file.c					\
-			check_pos.c						\
-			backtracking.c					\
-			check_tetro.c					\
-			fillit.c						\
-			file.c							\
-			check_square_size.c				\
-			grid.c							\
 
-SRC_DIR = src/
-SRC = $(addprefix $(SRC_DIR), $(SRC_NAME))
-OBJ = $(SRC_NAME:.c=.o)
+LIB = libft.a
 
-all : $(NAME)
+SRCSF = srcs/ft_parser.c \
+			Libft/libft.a \
+			srcs/main.c \
+			srcs/map.c \
+			srcs/assign.c \
+			srcs/charfunctions.c \
+			srcs/spot.c \
+			srcs/count.c \
+			srcs/vault.c
 
-$(NAME) :
-	make -C libft/
-	gcc $(SRC) -I $(INC) libft/libft.a -o $(NAME) $(FLAGS)
+OBJSF = ft_parser.o \
+			main.o \
+			map.o \
+			assign.o \
+			charfunctions.o \
+			spot.o \
+			count.o \
+			vault.o
 
-test :
-	gcc $(SRC) -I includes libft.a -o debug
+D_COLOR= \033[0m
+GREEN1=  \033[32m
+GREY1=   \033[37m
 
-clean :
-	rm -f $(OBJ)
-	@make -C libft/ clean
+all: $(NAME)
 
-fclean : clean
-	rm -f $(NAME)
-	@make -C libft/ fclean
+$(NAME):
+	@make -C ./Libft
+	@gcc -o $(NAME) $(SRCSF)
+	@echo "$(GREY1)L'executable a ete cree$(D_COLOR)"
 
-re : fclean all
+clean:
+	@rm -f $(OBJSF)
+	@make -C ./Libft clean
+	@echo "$(GREEN1)Les .o ont ete supprimer$(D_COLOR)"
 
-.PHONY: all clean fclean re
+fclean: clean
+	@rm -f $(NAME)
+	@make -C ./Libft fclean
+	@echo "$(GREEN1)La bibliotheque a egalement ete supprimer$(D_COLOR)"
+
+re: fclean all
