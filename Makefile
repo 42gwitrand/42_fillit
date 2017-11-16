@@ -15,7 +15,7 @@ NAME = fillit
 LIB = libft.a
 
 SRCSF = srcs/ft_parser.c \
-			Libft/libft.a \
+			libft/libft.a \
 			srcs/main.c \
 			srcs/map.c \
 			srcs/assign.c \
@@ -40,18 +40,18 @@ GREY1=   \033[37m
 all: $(NAME)
 
 $(NAME):
-	@make -C ./Libft
+	@make -C ./libft
 	@gcc -o $(NAME) $(SRCSF)
 	@echo "$(GREY1)L'executable a ete cree$(D_COLOR)"
 
 clean:
 	@rm -f $(OBJSF)
-	@make -C ./Libft clean
+	@make -C ./libft clean
 	@echo "$(GREEN1)Les .o ont ete supprimer$(D_COLOR)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@make -C ./Libft fclean
+	@make -C ./libft fclean
 	@echo "$(GREEN1)La bibliotheque a egalement ete supprimer$(D_COLOR)"
 
 re: fclean all
