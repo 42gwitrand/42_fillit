@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/27 12:56:18 by tiskow            #+#    #+#             */
-/*   Updated: 2017/11/14 10:18:42 by tiskow           ###   ########.fr       */
+/*   Created: 2017/04/27 12:56:18 by maechard          #+#    #+#             */
+/*   Updated: 2017/08/16 15:00:12 by laymard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../Libft/libft.h"
 
 t_tetri		*tetriminos_vault(char *av, unsigned int verif)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   vault.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: laymard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/11 04:24:44 by gwitrand          #+#    #+#             */
-/*   Updated: 2017/11/14 10:19:05 by tiskow           ###   ########.fr       */
+/*   Created: 2017/08/11 04:24:44 by laymard           #+#    #+#             */
+/*   Updated: 2017/08/16 15:20:20 by laymard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../Libft/libft.h"
 
 static int		*getx(char **map, int xval, int y, int x)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   count.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: laymard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/14 17:14:21 by gwitrand          #+#    #+#             */
-/*   Updated: 2017/11/14 10:18:31 by tiskow           ###   ########.fr       */
+/*   Created: 2017/08/14 17:14:21 by laymard           #+#    #+#             */
+/*   Updated: 2017/08/16 13:12:20 by laymard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../Libft/libft.h"
 
 static int	obtainx(char **map)
 {

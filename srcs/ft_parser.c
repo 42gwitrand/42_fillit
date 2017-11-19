@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 16:27:32 by tiskow            #+#    #+#             */
-/*   Updated: 2017/11/14 10:18:37 by tiskow           ###   ########.fr       */
+/*   Created: 2017/04/19 16:27:32 by maechard          #+#    #+#             */
+/*   Updated: 2017/08/16 14:15:17 by laymard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../Libft/libft.h"
 
 static void	put_as_null(int *ft, int *sd, int *td)
 {

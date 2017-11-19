@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   assign.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: laymard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/11 01:04:41 by gwitrand          #+#    #+#             */
-/*   Updated: 2017/11/14 10:18:15 by tiskow           ###   ########.fr       */
+/*   Created: 2017/08/11 01:04:41 by laymard           #+#    #+#             */
+/*   Updated: 2017/08/16 20:12:23 by laymard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../Libft/libft.h"
 
 void	*error(char *message)
 {

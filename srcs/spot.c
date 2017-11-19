@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   spot.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: laymard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/10 23:36:42 by gwitrand          #+#    #+#             */
-/*   Updated: 2017/11/14 10:18:58 by tiskow           ###   ########.fr       */
+/*   Created: 2017/08/10 23:36:42 by laymard           #+#    #+#             */
+/*   Updated: 2017/08/16 15:20:00 by laymard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../Libft/libft.h"
 
 int		valid_place(int line, int column, char **map, t_tetri *lst)
 {

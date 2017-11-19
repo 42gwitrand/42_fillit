@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   charfunctions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiskow <tiskow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: laymard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/11 00:34:27 by gwitrand          #+#    #+#             */
-/*   Updated: 2017/11/14 10:18:22 by tiskow           ###   ########.fr       */
+/*   Created: 2017/08/11 00:34:27 by laymard           #+#    #+#             */
+/*   Updated: 2017/08/16 14:53:44 by laymard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../Libft/libft.h"
 
 t_tetri			*charcrea(unsigned int i, int *coox, int *cooy)
 {
