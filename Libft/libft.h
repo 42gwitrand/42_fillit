@@ -123,6 +123,7 @@ int					size_finder(t_tetri *lst);
 char				**map_creator(unsigned int i);
 void				vault(t_tetri **fillst, char *str, unsigned int i);
 void				*error(char *message);
+int				int_error(char *message);
 int					tetcheck(char *str);
 int					count(char **map);
 

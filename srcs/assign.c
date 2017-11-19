@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assign.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: laymard <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/11 01:04:41 by laymard           #+#    #+#             */
-/*   Updated: 2017/08/16 20:12:23 by laymard          ###   ########.fr       */
+/*   Created: 2017/11/11 01:04:41 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/16 20:12:23 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ void	*error(char *message)
 	ft_putstr(message);
 	ft_putchar('\n');
 	return (NULL);
+}
+
+int	int_error(char *message)
+{
+	ft_putstr(message);
+	ft_putchar('\n');
+	return (0);
 }
 
 void	print_map(char **map, unsigned int size)

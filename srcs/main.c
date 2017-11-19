@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/27 12:56:18 by maechard          #+#    #+#             */
-/*   Updated: 2017/08/16 15:00:12 by laymard          ###   ########.fr       */
+/*   Created: 2017/11/11 01:04:41 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/16 20:12:23 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int			main(int argc, char **argv)
 
 	solved = 0;
 	if (argc != 2)
-		return ((int)error("usage: ./Fillit fichier"));
+		return (int_error("usage: ./Fillit fichier"));
 	temp = tetriminos_vault(argv[1], 0);
 	if (!temp)
 		return (0);
