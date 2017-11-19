@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
+#include "libft.h"
 
 int		valid_place(int line, int column, char **map, t_tetri *lst)
 {

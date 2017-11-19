@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
+#include "libft.h"
 
 t_tetri		*tetriminos_vault(char *av, unsigned int verif)
 {

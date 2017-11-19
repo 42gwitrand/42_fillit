@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
+#include "libft.h"
 
 static void	put_as_null(int *ft, int *sd, int *td)
 {

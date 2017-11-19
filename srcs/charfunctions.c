@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
+#include "libft.h"
 
 t_tetri			*charcrea(unsigned int i, int *coox, int *cooy)
 {

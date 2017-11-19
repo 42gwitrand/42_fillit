@@ -29,13 +29,15 @@ D_COLOR= \033[0m
 GREEN1=  \033[32m
 GREY1=   \033[37m
 
+INCLUDE= -I Libft/
+
 CCO = gcc -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME):
 	@make -C ./Libft
-	@$(CCO) -o $(NAME) $(SRCSF) Libft/libft.a
+	@$(CCO) -o $(NAME) $(SRCSF) Libft/libft.a $(INCLUDE)
 	@echo "$(GREY1)L'executable a ete cree$(D_COLOR)"
 
 clean:
