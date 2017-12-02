@@ -3,40 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 16:48:08 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/18 13:13:38 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:57:10 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:57:11 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
-	int		tmpn;
-	int		len;
-	int		sign;
-	char	*str;
+	size_t			intlen;
+	unsigned int	nb;
+	char			*tmp;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	tmpn = n;
-	len = 2;
-	sign = 0;
-	ft_itoa_isneg(&n, &sign);
-	while (tmpn /= 10)
-		len++;
-	len += sign;
-	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
+	nb = (n < 0) ? -n : n;
+	intlen = ft_intlen(nb);
+	tmp = ft_memalloc(intlen);
+	if (!tmp)
 		return (NULL);
-	str[--len] = '\0';
-	while (len--)
+	while (nb)
 	{
-		str[len] = n % 10 + '0';
-		n = n / 10;
+		tmp[intlen--] = (nb % 10 + 48);
+		nb = nb / 10;
 	}
-	if (sign)
-		str[0] = '-';
-	return (str);
+	tmp[intlen] = (n == 0) ? '0' : '-';
+	tmp = (n > 0) ? ft_strdup(&tmp[1]) : ft_strdup(tmp);
+	return (tmp);
 }

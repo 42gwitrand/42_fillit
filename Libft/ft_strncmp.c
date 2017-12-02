@@ -3,27 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/14 18:27:17 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/13 11:26:44 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:59:01 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:59:03 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	unsigned int	address;
-
-	address = 0;
-	while (s1[address] != '\0' && address < n)
-	{
-		if (s1[address] != s2[address])
-			return ((unsigned char)s1[address] - (unsigned char)s2[address]);
-		address++;
-	}
-	if (s2[address] != '\0' && address < n)
-		return ((unsigned char)s1[address] - (unsigned char)s2[address]);
-	return (0);
+	n = (str2) ? ft_min(n, ft_strlen(str2) + 1) : n;
+	return (ft_memcmp(str1, str2, n));
 }

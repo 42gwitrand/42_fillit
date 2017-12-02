@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cp.c                                            :+:      :+:    :+:   */
+/*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 16:04:47 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/28 18:05:41 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/09 21:45:34 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/09 21:45:37 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_cp(char *src, char *dest, int length)
+size_t	ft_min(size_t a, size_t b)
 {
-	int		a;
-
-	a = 0;
-	while (a < length)
-	{
-		dest[a] = src[a];
-		if (src[a] == '\n' && src[a - 1] == '\n')
-			if (src[a + 1] != '\0')
-				dest[a] = '\0';
-		a++;
-	}
-	dest[a] = '\0';
+	return ((a >= b) ? b : a);
 }

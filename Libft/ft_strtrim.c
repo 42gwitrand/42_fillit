@@ -3,38 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 14:11:22 by maechard          #+#    #+#             */
-/*   Updated: 2017/05/03 19:23:31 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:51:56 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:51:58 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(const char *s)
+char	*ft_strtrim(char const *str)
 {
-	unsigned int	i;
-	int				j;
-	int				tmp;
-	char			*res;
+	int	st;
+	int	end;
 
-	if (!s)
-		return (0);
-	i = 0;
-	j = -1;
-	while (s[++j] == ' ' || s[j] == '\t' || s[j] == '\n')
-		++i;
-	tmp = j--;
-	while (s[++j])
-		if ((s[j] == ' ' || s[j] == '\t' || s[j] == '\n') &&
-				!(s[j - 1] == ' ' || s[j - 1] == '\t' || s[j - 1] == '\n'))
-			tmp = j;
-	if (!(s[j - 1] == ' ' || s[j - 1] == '\t' || s[j - 1] == '\n'))
-		tmp = j;
-	if (!(res = (char*)malloc(sizeof(char) * (tmp - i))))
-		return (0);
-	res = ft_strsub(s, i, tmp - i);
-	res[tmp - i] = 0;
-	return (res);
+	if (!str)
+		return (NULL);
+	st = 0;
+	end = ft_strlen((char *)str) - 1;
+	while (str[st] == ' ' || str[st] == '\n' || str[st] == '\t')
+		st++;
+	while (str[end] == ' ' || str[end] == '\n' || str[end] == '\t')
+		end--;
+	return ((end < st) ? ft_strnew(0) : ft_strsub(str, st, end - st + 1));
 }

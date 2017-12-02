@@ -3,29 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/14 15:30:29 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/13 11:26:59 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:51:10 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:51:12 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	unsigned int	address;
-
-	address = 0;
-	while (src[address] != '\0' && address < n)
-	{
-		dest[address] = src[address];
-		address++;
-	}
-	while (address < n)
-	{
-		dest[address] = '\0';
-		address++;
-	}
+	ft_memcpy(dest, src, n);
+	if (ft_strlen(src) < n)
+		ft_bzero(&dest[ft_strlen(dest)], (n - ft_strlen(dest)));
 	return (dest);
 }

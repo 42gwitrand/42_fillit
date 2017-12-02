@@ -3,38 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 15:37:54 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/14 16:44:50 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:50:29 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:50:31 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *str, char c)
+char		**ft_strsplit(char const *str, char c)
 {
-	char	**tab;
-	int		mots;
-	int		a;
-	int		b;
-	int		d;
+	char	**split;
+	int		i;
+	int		j;
 
-	mots = ft_nb_mots(((char*)str), c);
-	if (!(tab = (char **)malloc(sizeof(char *) * mots + 1)))
+	i = 0;
+	j = 0;
+	if (!str)
 		return (NULL);
-	a = 0;
-	d = -1;
-	while (++d < mots)
+	split = ft_memalloc(sizeof(split) * ft_countsplit(str, c) + 1);
+	if (!split)
+		return (NULL);
+	while (str[i])
 	{
-		while (str[a] == c)
-			a++;
-		b = ft_nb_lettres(((char*)str + a), c);
-		if (!(tab[d] = (char*)malloc(sizeof(*tab) * (b + 1))))
-			return (NULL);
-		ft_cp((char*)str + a, tab[d], b);
-		a = a + b;
+		if (ft_strclen(&str[i], c))
+			split[j++] = ft_strsub(str, i, ft_strclen(&str[i], c));
+		i += ft_strclen(&str[i], c) ? ft_strclen(&str[i], c) : 1;
 	}
-	tab[d] = 0;
-	return (tab);
+	split[j] = NULL;
+	return (split);
 }

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nb_lettres.c                                    :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 15:57:04 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/14 16:45:37 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:49:42 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:49:44 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nb_lettres(char *str, char c)
+size_t		ft_intlen(int n)
 {
-	int		nb;
+	size_t	i;
 
-	nb = 0;
-	while (str[nb] != c && str[nb])
-		nb++;
-	return (nb);
+	i = 0;
+	while (n)
+	{
+		n = n / 10;
+		++i;
+	}
+	return (i);
 }

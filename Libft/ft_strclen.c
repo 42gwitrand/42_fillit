@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 20:16:35 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/14 20:24:35 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:58:18 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:58:19 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_power(int pow, int n)
+size_t		ft_strclen(char const *str, char c)
 {
-	if (pow < 0)
-		return (0);
-	if (pow == 0)
-		return (1);
-	return (n * ft_power(pow - 1, n));
+	int	i;
+
+	i = 0;
+	while (str[i] != c && str[i])
+		++i;
+	return (i);
 }

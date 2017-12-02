@@ -6,11 +6,25 @@
 /*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/11 01:04:41 by gwitrand          #+#    #+#             */
-/*   Updated: 2017/11/16 20:12:23 by gwitrand         ###   ########.fr       */
+/*   Updated: 2017/12/02 10:54:13 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fcntl.h>
 #include "libft.h"
+
+void		print_map(char **map, unsigned int size)
+{
+	unsigned int i;
+
+	i = 0;
+	while (i < size)
+	{
+		ft_putstr(map[i]);
+		ft_putchar('\n');
+		i++;
+	}
+}
 
 t_tetri		*tetriminos_vault(char *av, unsigned int verif)
 {

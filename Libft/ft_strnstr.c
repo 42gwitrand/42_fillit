@@ -3,39 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 11:48:12 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/13 11:27:18 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:55:36 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:55:37 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_strnstr(const char *str, const char *search, size_t n)
 {
-	size_t		address;
-	size_t		address2;
-	size_t		size;
+	size_t	i;
 
-	address = 0;
-	size = 0;
-	while (to_find[size] != '\0')
-		++size;
-	if (size == 0)
-		return ((char*)str);
-	while (str[address] != '\0' && address < len)
+	i = 0;
+	if (!*search)
+		return ((char *)str);
+	while (str[i] && (i + ft_strlen(search) <= n))
 	{
-		address2 = 0;
-		while (str[address + address2] == to_find[address2])
-		{
-			if (address + address2 > len)
-				return (0);
-			if (address2 == size - 1)
-				return ((char*)str + address);
-			++address2;
-		}
-		++address;
+		if (ft_strnequ(&str[i], search, ft_strlen(search)))
+			return ((char *)&str[i]);
+		++i;
 	}
-	return (0);
+	return (NULL);
 }

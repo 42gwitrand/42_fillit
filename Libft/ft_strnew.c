@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/13 15:40:37 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/13 16:11:31 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:52:28 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:52:30 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*str;
-
-	if (!(str = (char*)malloc(sizeof(char) * (size + 1))))
-		return (0);
-	ft_bzero((void*)str, size + 1);
-	return (str);
+	return (ft_memalloc(size + 1));
 }

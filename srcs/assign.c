@@ -19,24 +19,11 @@ void	*error(char *message)
 	return (NULL);
 }
 
-int	int_error(char *message)
+int		int_error(char *message)
 {
 	ft_putstr(message);
 	ft_putchar('\n');
 	return (0);
-}
-
-void	print_map(char **map, unsigned int size)
-{
-	unsigned int i;
-
-	i = 0;
-	while (i < size)
-	{
-		ft_putstr(map[i]);
-		ft_putchar('\n');
-		i++;
-	}
 }
 
 int		get_sqrt(int i, int j)

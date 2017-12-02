@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_isneg.c                                    :+:      :+:    :+:   */
+/*   ft_countsplit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwitrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/16 04:02:39 by maechard          #+#    #+#             */
-/*   Updated: 2017/04/16 04:06:47 by maechard         ###   ########.fr       */
+/*   Created: 2017/11/11 10:48:06 by gwitrand          #+#    #+#             */
+/*   Updated: 2017/11/11 10:48:58 by gwitrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_itoa_isneg(int *n, int *sign)
+int			ft_countsplit(char const *str, char c)
 {
-	if (*n < 0)
+	int	count;
+	int	i;
+
+	count = 0;
+	i = 0;
+	while (str[i])
 	{
-		*n *= -1;
-		*sign = 1;
+		if (ft_strclen(&str[i], c))
+			++count;
+		i += ft_strclen(&str[i], c) ? ft_strclen(&str[i], c) : 1;
 	}
+	return (count);
 }
